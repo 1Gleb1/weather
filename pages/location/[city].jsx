@@ -16,9 +16,9 @@ export async function getServerSideProps(context) {
 
 export default function City({data}) {
     return (
-        <div className='bg-gray-800 p-6 rounded-md w-full max-w-6xl flex flex-col gap-2 text-md'>
+        <div className='bg-gray-800 p-6 rounded-md w-full max-w-6xl flex flex-col gap-2 text-md min-w-full min-h-screen'>
             <div className='flex gap-4 flex-wrap'>
-                <div className='p-4 bg-gray-600 w-1/5 rounded-lg shadow-md transition hover:shadow-lg'>
+                <div className='p-4 gap-2 flex flex-col lg:flex-row bg-gray-600 w-3/5 lg:w-1/5 rounded-lg shadow-md transition hover:shadow-lg'>
                     <div>
                         <img src={`/images/icons/${data.list[8].weather[0].icon}.png`} alt={data.list[0].weather[0].description} width={90}/>
                     </div>
@@ -35,8 +35,8 @@ export default function City({data}) {
                 <div className='flex justify-between'>    
                     <div className=' text-2xl font-bold flex flex-col'>
                         {data.city.name}
-                        <span className='text-3xl font-bold'>{moment(data.dt).format('MMM DD dddd')}</span>
-                        <span className='text-2xl font-bold'>{moment(data.dt).format('HH:MM')}</span>
+                        <span className='text-xl lg:text-3xl font-bold'>{moment(data.dt).format('MMM DD dddd')}</span>
+                        <span className='text-lg lg:text-2xl font-bold'>{moment(data.dt).format('HH:MM')}</span>
                     </div>
                     <div>
                     <div className='flex flex-col items-center'>
@@ -48,10 +48,10 @@ export default function City({data}) {
                 </div>
                 
                 <div>
-                    <div className='px-3 py-2 flex justify-between'>
+                    <div className='px-3 py-2 flex flex-col lg:flex-row justify-between'>
 
                         {/* TEMPRATURA_MIN/MAX */}
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col items-center lg:items-start my-2'>
                             Temperature:
                             <span className='flex items-center'>
                             <img src={`/images/icons/${data.list[0].weather[0].icon > 15 ? "temp_hot"  : "temp_cold"}.png`} alt={data.list[0].weather[0].description} width={50} />
@@ -91,7 +91,7 @@ export default function City({data}) {
                 </div>
 
                 {/* OnDAY */}
-                <div className='flex text-sm gap-4'>
+                <div className='flex text-sm gap-4 flex-col lg:flex-row'>
                             <div className='flex flex-col items-center p-3 bg-cyan-200 bg-opacity-30 rounded-lg'>
                                 {/* 1 */}
                                 <div className='text-white'>
