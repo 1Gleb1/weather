@@ -31,6 +31,7 @@ export default function SearchBox() {
     }
   return (
     <div>
+        <span className='flex items-center justify-center text-2xl font-bold p-2'>City for Weather</span>
         <input 
             type="search"
             value={query}
