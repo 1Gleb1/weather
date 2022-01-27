@@ -17,14 +17,15 @@ export async function getServerSideProps(context) {
 }
 
 export default function City({data}) {
-    const [day, setDay] = useState(0)
     const list = data.list.slice(0, 8)
     const weekDays = []
-
+    
+    const [day, setDay] = useState(0)
     const handleDay = (id) => {
         setDay(id)
         console.log(day);
     }
+
     for(let i = 0; i < data.list.length; i= i+8){
         weekDays.push(data.list.slice(i, i+8))
     }
@@ -39,12 +40,13 @@ export default function City({data}) {
                     ))}
 
                 </div>
+                
                 <div className='flex justify-between'>
-                    <button className='p-2 bg-cyan-500 hover:bg-opacity-75 transition rounded' onClick={() => handleDay(0)}>{moment(weekDays[0].dt).format('dddd')}</button>
-                    <button className='p-2 bg-cyan-500 hover:bg-opacity-75 transition rounded' onClick={() => handleDay(1)}>{moment(weekDays[1].dt).format('dddd')}</button>
-                    <button className='p-2 bg-cyan-500 hover:bg-opacity-75 transition rounded' onClick={() => handleDay(2)}>{moment(weekDays[2].dt).format('dddd')}</button>
-                    <button className='p-2 bg-cyan-500 hover:bg-opacity-75 transition rounded' onClick={() => handleDay(3)}>{moment(weekDays[3].dt).format('dddd')}</button>
-                    <button className='p-2 bg-cyan-500 hover:bg-opacity-75 transition rounded' onClick={() => handleDay(4)}>{moment(weekDays[4].dt).format('dddd')}</button>
+                    <button className='p-2 bg-cyan-500 hover:bg-opacity-75 transition rounded' onClick={() => handleDay(0)}>DAY</button>
+                    <button className='p-2 bg-cyan-500 hover:bg-opacity-75 transition rounded' onClick={() => handleDay(1)}>DAY</button>
+                    <button className='p-2 bg-cyan-500 hover:bg-opacity-75 transition rounded' onClick={() => handleDay(2)}>DAY</button>
+                    <button className='p-2 bg-cyan-500 hover:bg-opacity-75 transition rounded' onClick={() => handleDay(3)}>DAY</button>
+                    <button className='p-2 bg-cyan-500 hover:bg-opacity-75 transition rounded' onClick={() => handleDay(4)}>DAY</button>
                 </div>
                 
                 <div className='p-6 rounded-lg bg-gradient-to-br from-cyan-600 to-indigo-800 shadow-lg'>

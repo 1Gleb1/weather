@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-export default function OneDay({item}) {
+export default function WeatherOnDay({item}) {
 
     return (
         

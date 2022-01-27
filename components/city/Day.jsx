@@ -1,10 +1,10 @@
 import React from 'react';
 import moment from 'moment';
-import OneDay from '../../components/city/OneDay';
+import WeatherOnDay from './WeatherOnDay';
 
 
 
-export default function Day({data, list, day}) {
+export default function Day({data, day}) {
     const once = day[0]
     return (
         <div>
@@ -15,7 +15,7 @@ export default function Day({data, list, day}) {
                     <span className='text-xl lg:text-3xl font-bold'>{moment(once.dt_txt).format('MMM DD dddd')}</span>
                     <span className='text-lg lg:text-2xl font-bold'>{moment(once.dt_txt).format('HH:mm')}</span>
                 </div>
-                <div className='flex flex-col items-center'>
+                <div className='flex flex-col items-center '>
                         <img src={`/images/icons/${once.weather[0].icon}.png`} alt={once.weather[0].description} width={100} />
                         Today: {once.weather[0].description}
                 </div>
@@ -24,7 +24,7 @@ export default function Day({data, list, day}) {
             <div>
                 <div className='px-3 py-2 flex flex-col sm:flex-row justify-between'>
 
-                    {/* TEMPRATURA_MIN/MAX */}
+                    {/* TEMPRATURE */}
                     <div className='flex flex-col items-center lg:items-start my-2'>
                         Temperature:
                         <span className='flex items-center'>
@@ -51,12 +51,14 @@ export default function Day({data, list, day}) {
                     </div>
 
                 </div>
+
                 {/* OnDAY */}
                 <div className='flex text-sm gap-4 flex-col md:flex-row justify-center flex-wrap lg:flex-nowrap'>
                     {day.map((item, index) => (
-                        <OneDay key={index} item={item} />
+                        <WeatherOnDay key={index} item={item} />
                     ))}
                 </div>
+
             </div>
 
         </div>
