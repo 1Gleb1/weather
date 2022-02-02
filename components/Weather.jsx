@@ -78,13 +78,13 @@ export default function Weather({data}) {
                     </div>
                 </div>
             </div>
-            {/* <div className='mt-4 text-center'>
+            <div className='mt-4 text-center'>
                 <Link href={`/forecast/${getSlug(data.name, data.id)}`}>
                     <a className='inline-block py-3 px-6 bg-rose-600 hover:bg-rose-500 transition-colors rounded-full'>
                         5 days forecast
                     </a>
                 </Link>
-            </div> */}
+            </div>
         </div>
     );
 }

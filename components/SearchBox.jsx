@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Link from 'next/link';
 import cities from '../lib/city.list.json'
-import axios from 'axios';
 import { getSlug } from '../lib/helpers';
 
 export default function SearchBox() {
