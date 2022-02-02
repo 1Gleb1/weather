@@ -8,7 +8,7 @@ import { Chart as ChartJS,
     Tooltip,
     Legend} from 'chart.js'
 import moment from 'moment';
-import { Bubble, Chart, Doughnut, Pie, Radar } from 'react-chartjs-2'
+import { Chart } from 'react-chartjs-2'
 ChartJS.register(
     ArcElement,
     CategoryScale,
@@ -29,7 +29,7 @@ ChartJS.register(
 
     // ВЫБРАННЫЙ И СЛЕДУЮЩИЙ ДЕНЬ
     const dt = day[0].dt * 1000
-    const dt_next = dt + 99999999
+    const dt_next = dt + 86400000
     
     // TEMPERATURE
     const tempCrap = []
