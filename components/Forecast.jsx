@@ -6,7 +6,8 @@ import { Chart as ChartJS,
     LineElement,
     Title,
     Tooltip,
-    Legend, line} from 'chart.js'
+    Legend,
+    LineController} from 'chart.js'
 import moment from 'moment';
 import { Chart } from 'react-chartjs-2'
 ChartJS.register(
@@ -18,7 +19,7 @@ ChartJS.register(
     Title,
     Tooltip,
     Legend,
-    line
+    LineController
   )
   export default function Forecast({day}){
 
